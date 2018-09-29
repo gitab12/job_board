@@ -7,7 +7,7 @@ ruby '2.3.3'
 gem 'rails', '~> 5.2.1'
 
 #gem 'sqlite3'
-
+gem 'pg', '>=1.1.3-x86-mingw32'
 gem 'puma', '~> 3.11'
 
 gem 'sass-rails', '~> 5.0'
@@ -34,15 +34,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
-gem 'sqlite3', group: :development
-gem 'pg', group: :production
-gem 'rails_12factor'
+#gem 'sqlite3', group: :development
 
 group :development do
  
   gem 'web-console', '>= 3.3.0'
 end
-
+group :production do
+gem 'rails_12factor'
+end
 group :test do
 
   gem 'capybara', '>= 2.15'
